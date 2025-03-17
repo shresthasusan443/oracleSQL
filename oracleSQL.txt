@@ -1,0 +1,454 @@
+1.what is database?
+	A database is an organized collection of data, typically stored and accessed electronically.
+
+
+2.what is oracle?
+	Oracle is a Database Management System (DBMS) that allows businesses and developers to store, manage, and retrieve data using SQL (Structured Query Language). Oracle's architecture is designed to be highly reliable, scalable, and secure, making it ideal for mission-critical applications.
+
+3.key concept of oracle
+
+1.oracle database:
+	This is the core product, and it’s responsible for storing, retrieving, and managing data
+in relational tables. Oracle Database also handles backup and recovery, user management, and security. It’s widely used in large-scale enterprise applications, data warehouses, and cloud services.
+
+2.oracle SQL:
+	SQL is a programming language used by nearly all relational databases to query, manipulate, and define data, and to provide access control.
+
+3.oracle PL/SQL:
+	PL/SQL (Procedural Language for SQL) is Oracle’s procedural extension to SQL. It enables the 
+writing of programs (procedures, functions, triggers) that can be executed on the database server. 
+PL/SQL allows for the inclusion of programming logic like loops, conditions, and exception handling 
+in SQL operations.
+
+4.oracle architecture
+  a. instance:
+	Consists of memory structures (SGA) and background processes that manage the interaction between users and the database.
+
+  b. database
+	The actual physical storage of the database.(datafiles, redo log files).
+
+  c. schemas:
+ 	Logical container of database objects which are associated with users.(table, indexes, views).
+
+  d. Tablespace:
+	store structures that group data files together
+
+5. oracle features:
+1. Client/ Server Architecture- To take full advantage of the distributed systems, the oracle can allow processing to be split into client and server application programs. So, for the purpose of the distributed processing, it is based on client/server architecture.
+
+2. Large database and Space Management- Oracle can support the largest of the databases. It allows the full control of space used so that hardware devices can be used efficiently.
+
+3. High availability-It is never out of action or unavailable. Therefore, all the normal operations such as backups or partial failures do not interrupt the use of the database.
+
+4. Many concurrent database users- Oracle server minimizes the disputes between the data and assures data concurrency.
+
+5. Openness industry standards- Oracle follows the industry-accepted standards for the data access language, user interfaces, operating systems, and other network protocols. One of the advantages is that it is an “open” system that protects a customer’s investment.
+
+6. Enforced database integrity- Oracle enforces data integrity which is the assurance of the consistency of the data. As a result, the costs of coding and managing checks in many database applications are removed.
+
+7. Portability- Oracle software can be ported to work under a number of operating systems. Applications that are developed using Oracle can be ported to other operating systems without requiring any changes.
+
+8.Compatibility-Oracle software is compatible with the standards of industries. Applications developed for oracle is compatible with many other systems without a need for much modification.
+
+9. Controlled availability- Oracle also has a great feature of controllable availability and each and every level(even at sub-level). For Example, the administrator can also disable some specific applications to be packed or loaded without affecting other applications.
+
+10. Concurrent processing- Oracle allows a number of concurrent users to execute a variety of applications concurrently. A number of applications can be run at the same time by using Oracle.
+
+11. Replicating environments- Oracle software allows users to replicate groups of tables and their supporting objects to multiple sites.
+
+12. High transaction processing performance- Oracle also maintains a high degree of overall system performance. The database users do not suffer from slow processing performance.
+
+13. Manageable security- To protect against unauthorized database access and use, Oracle provides fail-safe security features to limit and monitor data access.
+
+14. Distributed systems- Oracle is based on distributed systems that have the same degree of user transparency and data consistency as non-distributed systems with the advantages of local database management.
+
+6. oracle components:
+  a. data files:
+	Datafiles are physical files of the operating system that store the data of all logical structures in the database
+
+  b. control files:
+	Control files store metadata about the database, such as its structure, status, and locations of datafiles and redo log files.
+
+  c. redo log files:
+	redo log files is a file that records changes made to the database.
+
+  d. Table spaces:
+	Tablespace in Oracle Database are logical storage units to store all the data. Logical storage units help users locate specific data and help in the retrieval of data.
+
+  e. segments:
+	segments is a collection of extents that hold all the data for a specific logical storage structure, like a table or an index, within a tablespace.
+
+  f. extents and blocks:
+	blocks is a smallest unit of a data storage.
+	extents is a group of contiguous data blocks allocated together to store data for a specific object like a table or index. 
+
+7. oracle SQL key concepts:
+    a. DML(data manipulation language)
+	1.SELECT:
+		it selects the particular data from the database
+	2.INSERT:
+		adds new rows of data to a table
+	3.UPDATE:
+		update existing data within a table 
+	4.DELETE:
+		deletes database object
+
+    b.	DDL(data definition language)
+		1. CREATE:
+			creates a new database such as table, index, function
+		2. ALTER:
+			it is used to add, modify, or drop/delete columns in a table
+		3. DROP:
+			deletes object from the database
+
+    C.TCL(transaction control language)
+		1. COMMIT:
+			Saves all changes made during the transaction
+		2. ROLLBACK:
+			undoes the changes made during transactions. 
+
+### Important SQL Commands
+	1. SELECT: Used to retrieve data from a database.
+	2. INSERT: Used to add new data to a database.
+	3. UPDATE: Used to modify existing data in a database.
+	4. DELETE: Used to remove data from a database.
+	5. CREATE TABLE: Used to create a new table in a database.
+	6.ALTER TABLE: Used to modify the structure of an existing table.
+	7.DROP TABLE: Used to delete an entire table from a database.
+	8. WHERE: Used to filter rows based on a specified condition.
+	9.ORDER BY: Used to sort the result set in ascending or descending order.
+	10.JOIN: Used to combine rows from two or more tables based on a related column between them.
+		
+ 8. oracle PL/SQL key concepts:
+		PL/SQL (Procedural Language for SQL) is Oracle’s procedural extension to SQL. It enables the 
+writing of programs (procedures, functions, triggers) that can be executed on the database server. 
+PL/SQL allows for the inclusion of programming logic like loops, conditions, and exception handling 
+in SQL operations.
+
+		a.PL/SQL block structure:
+			1.declaration section:
+					The declaration section is required if any variables are to be used in a PL/SQL block. The declaration section also defines cursors, types, local procedures, and functions that are used in a block. If no variables or other elements need to be declared, then this section may be omitted.
+			Several different types of variables may be defined in a PL/SQL block. You can use simple, scalar variables to hold numeric, character string, and date values. You can declare record 	variables that allow you to manipulate several related values together. You can even declare in-memory tables and arrays.
+			
+			SYNTAX:
+				variable_name type [CONSTANT] [NOT NULL] [:=initial_value]
+
+			2.execution section:
+					The execution section of a PL/SQL block is the only required section. It contains the PL/SQL code that actually performs some action; the exception section also performs an action, but only after being triggered by an action in the execution section. 
+
+			SYNTAX:
+				BEGIN
+				   {assignment_statement    |
+				     proc_call    |
+				     control_statement    |
+				     PL/SQL_block    |
+				     SQL
+				
+								};
+				   [{assignment_statement    |
+				     proc_call    |
+				     control_statement    |
+				     PL/SQL_block    |
+				     SQL
+				    }; . . . ]
+				END;
+
+			3.exception handling section:
+				An exception is a PL/SQL error that is raised during program execution, either implicitly by TimesTen or explicitly by your program. Handle an exception by trapping it with a handler or propagating it to the calling environment.	
+		
+			Types:
+			   -Predefined exceptions
+			   -Non-predefined exceptions
+			   -User-defined exceptions
+
+		b. stored procedure and functions:
+			1.store procedure:
+				A SQL Stored Procedure is a collection of SQL statements bundled 	together to perform a specific task. These procedures are stored in the database and can be 	called upon by users, applications, or other procedures
+
+			2. functions:
+				In Oracle, a function block structure refers to the basic building block of a PL/SQL function, which consists of three distinct parts: a declarative section (variable declarations), an executable section (the actual code logic), and an exception handling section (to manage potential errors).
+
+		c. triggers:
+			triggers automatically execute when certain events(INSERT, UPDATE, DELETE) occurs in table.
+
+9.oracle database Administration(DBA):
+	a. installation and configuration:
+	b. user and privilege management 
+	c. backup and recovery
+	d. performance tuning
+
+10.oracle cloud Infrastructure (OCI):
+	Oracle Cloud Infrastructure (OCI) offers various services that help businesses manage applications, databases, and workloads in the cloud.
+
+	a. oracle autonomous database:
+			
+	b. compute services(as a vm machine):
+			Oracle Compute services provide compute capacity in the cloud for virtual machines (VMs) and bare metal instances.
+
+	c. storage service:
+			Oracle offers a variety of storage services, including object storage, file storage, and block volume storage. 
+
+	d. networking services:
+			In Oracle, "networking services" refers to the "Oracle Net Services" which essentially provide a way for client applications to connect to an Oracle database across a network, managing the connection process and ensuring smooth data transfer between the client and the database server.
+			
+
+11. data type in oracle:
+	1. character datatype
+		a. CHAR(n):
+			fixed length character string(max 2000 bytes) 
+
+		b. VARCHAR2(n):
+			 VARCHAR2 datatype stores variable-length character strings with maximum 
+			string length of 4000bytes.
+
+		c. NCHAR(n):
+			fixed length Unicode character string supports International character(max 2000 bytes)
+
+			
+		d. NVARCHAR2(n):
+			variable length Unicode character string support international characters.
+		
+
+		Example:
+		   CREATE TABLE employees(
+		     	id CHAR(5),
+			Name VARCHAR2(50),
+			contact NUMBER(20),
+			code CHAR(15)
+		      );
+		//insert function
+		INSERT into students (
+		id , name, contact, code)VALUES(
+		3678, 'susan', 9863683365, '23st');
+
+	2.Numeric datatypes:
+		a. NUMBER(p,s)(p=precision, s=scale):
+			stores fixed and floating-point numbers(precision = total number of digit, scale = number of the digit to the right of the decimal point.) 
+			
+		b. BINARY_FLOAT:
+			stores 32-bits single-precision floating-point number datatype.
+
+		c. BINARY_DOUBLE:
+			Stores 64-bits double-precision floating-point number datatype.
+
+
+
+	Example:
+		   CREATE TABLE products(
+		     	id NUMBER(5),
+			name VARCHAR2(50),
+			price NUMBER(20,30),
+			discount BINARY_FLOAT
+  		        );
+   INSERT into products (
+id , name, price, discount)VALUES(
+3678, 'football',1200 , '230.00000');
+
+	3.Date and Time:
+		a. DATE:
+			DATE stores date and time information DATE stores following information (century year month date hour minute and second)
+
+		b. TIMESTAMP:
+			TIMESTAMP stores year, month, day, hour, minute, and second values. It also stores fractional second. 
+ 
+		C. TIMESTAMP WITH TIME ZONE:
+			TIMESTAMP WITH TIME ZONE is a variant of TIMESTAMP that includes a time zone region name or time zone offset in its value. 
+
+			Syntax:
+				TIMESTAMP [(fractional_seconds_precision)] WITH TIME ZONE
+
+		d. TIMESTAMP WITH LOCAL TIME ZONE:
+
+		e. INTERVAL YEAR TO MONTH:
+			INTERVAL YEAR TO MONTH stores a period of time using the YEAR and MONTH datetime fields.
+
+			Syntax:
+				INTERVAL YEAR [(year_precision)] TO MONTH
+
+		f. INTERVAL DAY TO SECOND:
+				INTERVAL DAY TO SECOND stores a period of time in terms of days, hours, minutes, and seconds. 
+
+			Syntax:
+				INTERVAL DAY [(day_precision)] 
+   				TO SECOND [(fractional_seconds_precision)]
+
+
+	4. large object:
+		a. CLOB:
+			stores database character data up to 128 tb. stores large text(max 4GB)
+		b. BLOB:
+			stores unstructured binary data(media, audio, images) up to 128 TB
+		c. NCLOB
+			stores Unicode national character set data up to 128 tb
+
+		d. BFILE:
+			stores unstructured binary data in operating files system outside the database. it stores a file locator that points to an external file containing the data. stores(pdf,  images).
+
+
+	5. ROWID and UROWID:
+		a. ROWID:
+			stores the addresses of rows in ordinary tables.
+		b. UROWID
+			store the addresses of index-organized and foreign tables.
+
+
+	6.JSON and XML:
+		a. JSON:
+			JSON is a lightweight format for storing and transporting data.
+		b. XMLTYPE:
+			used to store and query XML data in the database.
+	
+	7.Boolean data type:
+		Boolean data type enables you to represent logical values which are represented by values for "no" and "yes".
+		
+	8. user defined data type(UDT):
+		user defined data type is a custom data type created by a database user, allowing them to define complex data structures that aren't natively available in the Oracle database. mostly use(VARCHAR2,NUMBER)
+
+12. Statement of oracle:
+	a. SELECT
+	b. INSERT
+	c. DELETE
+	d. DROP
+	e. ALTER
+	f. CREATE
+	g. COMMENT
+	h. UPDATE
+	i. MERGE
+	j. CALL
+	K. EXPLAIN PLAN
+	l. LOCK TABLE
+	m. ROLLBACK:
+		revert changes 
+	n. SAVEPOINT
+	o. SET TRANSACTION
+	P. SET CONSTRAINT
+	q. COMMIT
+	r. AUDIT
+	s. NOAUDIT
+ 	t. RENAME
+	u. REVOKE
+	v. TRUNCATE
+		
+1.Data Definition Language(DDL):
+         defines the database structure 
+
+  statement          |         Descriptions			                             | syntax 
+1. CREATE TABLE		    creates the database of its objects	             CREATE TABLE table_name(column1 data
+			            such as(table, index, function)	                 type,column2 datatype...)
+
+2. DROP			        deletes objects from the database	              DROP TABLE table_name;
+
+3. ALTER TABLE		    alters the structure of the database	         ALTER TABLE table_name add 
+								                                        column_name data_type;
+
+4. TRUNCATE		        removes all the records from the data	        TRUNCATE TABLE table_name;
+			            base including all the spaces allocated
+			            for the records are removed
+
+5. COMMENT		        adds comments to the data dictionary	         COMMENT 'comment_text' ON TABLE
+								                                             table_name;
+
+6. RENAME		        rename an object existing in the 	                 RENAME TABLE old_table_name TO 
+			                database				                        new_table_name;
+
+7. ANALYZE		        gathers statistics about a table or	                 ANALYZE TABLE [object_name]
+				         index.					                            [COMPUTE STATISTICS]
+
+8.FLASHBACK TABLE	     used to restore an earlier state of a	             FALSHBACK TABLE table_name TO
+			            table in the event of human or application error    [TIMESTAMP timestamp] (SCN scn);
+                        error					
+
+9. REVOKE		        used to remove privillages from a 	                REVOKE {privillege | role} [,{privi
+			            specific user or role from all users	            llege| role}...] FROM {username |
+			            to perform actions on database objects	            rolename | PUBLIC}[,{username | role
+								name| PUBLIC}...];
+
+10. PURGE		       remove a table or index from your 	                DROP TABLE table_name PURGE;
+			            recyle bin and release all of the 
+			            space associated with object
+
+11. AUDIT		        tracks SQL statements and schema 	                AUDIT sql_statement [BY user 									[ ,user ... ]] [BY SESSION 
+								                                            [WHENEVER [NOT] SUCCESSFUL] 
+								                                         [BY ACCESS [WHENEVER [NOT] ]SUCCESSFUL]. 
+			
+12. GRANT		        gives privileges to a specific		             GRANT roleName [ {, roleName }* ] TO user 
+		                    grantees                                              or role	
+									
+																
+13. NO AUDIT		    stop audting operations previous	                    NOAUDIT [clause]" where "clause;
+			            enabled by the AUDIT statement		
+
+14. ASSOCIATE	    	associate a statistics type 		
+STATSTICS		    (or default statistics) containing
+ 			        functions relevant to statistics 
+			        collection, selectivity, or cost with 
+			        one or more columns, standalone functions,
+		             packages, types, domain indexes, or indextypes.
+    
+
+
+
+15. DISASSOCIATE	 disassociate default statistics or
+   STATISTICS		 a statistics type from columns, 
+			        standalone functions, packages,
+			        types, domain indexes, or 
+			        indextypes.
+    
+
+			
+
+2.##  Data Query Language(DQL)
+
+ statement          |         Descriptions			                         | syntax 
+1. SELECT		        selects the particular row in the 	        SELECT column1, column2, ....FROM
+			            table					                          table_name WHERE condition;
+
+3.## Data Manipulation Language(DML)
+
+ statement          |         Descriptions			                        | syntax 
+1. INSERT		        inserts data into a table		             INSERT INTO table_name(column1,
+								                                    column2..)VALUES (value1,value2..)
+
+2. UPDATE		        updates the existing data within	        UPDATE table_name SET column1 = 
+			            table					                     value1, column2 =value2 WHERE 
+									                                condition;
+
+3. DELETE		        delete records from a database table	    DELETE FROM table_name WHERE 										condition;
+
+4. LOCK			        table control concurrency		            LOCK TABLE table_name lock_mode
+
+5. CALL			        call a PL/SQL or JAVA subprogram	  	     CALL;
+						procedure_name(arguments)
+
+6. EXPLAIN PLAN		    describes the access path to data	        EXPLAIN PLAN FOR SELECT * 
+								                                     FROM table_name
+
+4. Data Control Language(DCL)
+
+
+statement          |         Descriptions			                    | syntax 
+1.GRANT 		        assigns new privileges to user account	             GRANT
+			            allowing access to specific databases 	        privilage_type [(column_list)]
+			            objects actions or functions				            ON
+								                                      [object_type] object_name TO 
+								                                        user[WITH GRANT OPTION];
+
+2.REVOKE	        	removes previously granted privileges 	       REVOKE [GRANT OPTION FOR] 
+			            from a user account taking away their 	        privilege_type [(column_list)]
+			            access to certain database objects or			            ON
+			            actions					                        [object_types] object_name
+								                                        FROM user [CASCADE];
+
+5.Transaction Control Language(TCL)
+statement          |         Descriptions			                 | syntax 
+1. BEGIN		          saves a new transaction		                 BEGIN TRANSACTION 
+   TRANSACTION							                                [transaction_name];
+
+2. COMMIT		        saves all changes made during		             COMMIT;
+			            the transaction				
+
+3.ROLLBACK		        undoes all changes made during		             ROLLBACK;
+			            the transactions	
+
+4. SAVEPOINT		    creates a savepoint within the 		              SAVEPOINT savepoint_name;
+			            current transaction 
